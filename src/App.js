@@ -80,8 +80,9 @@ function App() {
         <button>
           <span>Detaylı Bilgi</span>
         </button>
-        <button>
+        <button className="show-all">
           <span>Tüm Piyasalar</span>
+          <img src={"/images/icon.png"}/>
         </button>
       </div>
     </div>

@@ -1,53 +1,78 @@
 import { useEffect, useState } from "react";
 import Currency from "./components/Currency";
 import Converter from "./components/Converter";
+
+const getDate = () => {
+  let year = new Date().getFullYear()
+  let month = new Date().getMonth() + 1
+  let day = new Date().getDate()
+  if (day < 10) {
+    day = "0" + day
+  }
+  if (month < 10) {
+    month = "0" + month
+  }
+  return `${year}-${month}-${day}`
+}
+
 function App() {
   const [data, setData] = useState(null);
-  const [price, setPrice] = useState(null);
   const explanation = [
-    { USD: "Amerikan Doları" },
-    { EUR: "Avrupa Para Birimi" },
-    { JPY: "Japon Yeni" },
-    { GBP: "İngiliz Sterlini" },
-    { DKK: "Danimarka Kronu" },
-    { NOK: "Norveç Kronu" },
+    { name: "USD", exp: "Amerikan Doları", img: "/images/flag-1.png" },
+    { name: "EUR", exp: "Avrupa Para Birimi", img: "/images/flag-2.png" },
+    { name: "JPY", exp: "Japon Yeni", img: "/images/flag-3.png" },
+    { name: "GBP", exp: "İngiliz Sterlini", img: "/images/flag-4.png" },
+    { name: "DKK", exp: "Danimarka Kronu", img: "/images/flag-5.png" },
+    { name: "NOK", exp: "Norveç Kronu", img: "/images/flag-6.png" },
   ];
 
   useEffect(() => {
+    const fetchData = async () => {
+      const date = getDate()
+      const response = await fetch(
+        `http://api.exchangeratesapi.io/v1/${date}?access_key=19d60e349f6e05160fe1f27cb4842df2&base=EUR&symbols=TRY,USD,GBP,DKK,NOK,JPY,EUR`
+      );
+      const result = await response.json();
+      const ratesArray = Object.entries(result.rates);
+      const currencies = ratesArray.map(([name, price]) => {
+        const tryPrice = result.rates.TRY / price;
+        const obj = {};
+        obj.name = name;
+        obj.price = tryPrice;
+        return obj
+      });
+
+      for (let i = 0; i < currencies.length; i++) {
+        explanation.forEach(exp => {
+          if (exp.name === currencies[i].name) {
+            currencies[i].exp = exp.exp
+            currencies[i].img = exp.img
+          }
+        })
+      }
+
+      currencies.splice(0, 1)
+      setData(currencies);
+    };
+    setInterval(() => {
+      fetchData();
+    }, 1000 * 60);
     fetchData();
   }, []);
 
-  const fetchData = async () => {
-    const response = await fetch(
-      `http://api.exchangeratesapi.io/v1/2021-06-02?access_key=19d60e349f6e05160fe1f27cb4842df2&base=EUR&symbols=TRY,USD,GBP,DKK,NOK,JPY,EUR`
-    );
-    const result = await response.json();
-    setData(result);
-  };
+  if (data === null) return null;
 
-  if (data == null) return null;
-
-  const objectArray = Object.entries(data.rates);
-  objectArray.map(([name, price]) => {
-    const tryPrice = data.rates.TRY / price;
-    console.log(name);
-    console.log(tryPrice);
-    const obj = {};
-    obj.name = name;
-    obj.price = tryPrice;
-    console.log(obj);
-  });
   return (
     <div className="app">
       <h1>Piyasalar</h1>
       <div className="currency-wrapper">
-        <div className="currency-container row">
-          {objectArray.map(([key, value]) => {
-            return <Currency name={key} currency={value} base={data.base} />;
+        <div className="currency-container">
+          {data.map((currency, i) => {
+            return <Currency currency={currency} key={i} />;
           })}
         </div>
         <div className="converter-container">
-          <Converter />
+          <Converter currencies={data} />
         </div>
       </div>
       <div className="info-buttons">
@@ -61,5 +86,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

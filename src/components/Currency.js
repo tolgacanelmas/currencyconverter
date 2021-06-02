@@ -1,30 +1,28 @@
 import React from 'react'
 import '../styles/scss/converter.css'
 
-const Currency = ({ name, currency, base }) => {
-    if (currency == 1) return null
+const Currency = ({ currency , i}) => {
+    if (currency.price === 1) return null
 
-    const digit = currency.toString().split(".")[0]
-    const float = currency.toString().split(".")[1]
-    const fourFloat = float.substring(0,4)
+    const convertedMoney = currency.price.toFixed(4)
 
     return (
-        <div className="currency" key={name}>
+        <div className="currency" key={i}>
             <div className="currency-inner">
                 <div className="currency-img">
-                    <img src={window.location.origin + '/images/flag-1.png'} />
+                    <img src={currency.img} alt=""/>
                 </div>
                 <div className="currency-title">
-                    <span>{name}</span>
-                    <span>Amerikan Doları</span>
+                    <span>{currency.name}</span>
+                    <span>{currency.exp}</span>
                 </div>
                 <div className="currency-buy">
                     <span>ALIŞ</span>
-                    <span>{digit + "." + fourFloat}</span>
+                    <span>{convertedMoney}</span>
                 </div>
                 <div className="currency-sell">
                     <span>SATIŞ</span>
-                    <span>{digit + "." + fourFloat}</span>
+                    <span>{convertedMoney}</span>
                 </div>
             </div>
 

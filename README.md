@@ -1,6 +1,6 @@
 # Project Link
 
-(https://currencyconverter-gilt.vercel.app)
+https://currencyconverter-gilt.vercel.app
 
 # Getting Started with Create React App
 

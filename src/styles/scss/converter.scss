@@ -222,6 +222,12 @@
           }
           select {
             padding: 0px 10px;
+            font-family: Roboto;
+            font-size: 16px;
+            line-height: 1.25;
+            text-align: right;
+            color: #2b3b48;
+            border-left: 1px solid #eaeef2;
           }
         }
         & > img {

@@ -17,20 +17,21 @@ const getDate = () => {
 
 function App() {
   const [data, setData] = useState(null);
-  const explanation = [
-    { name: "USD", exp: "Amerikan Doları", img: "/images/flag-1.png" },
-    { name: "EUR", exp: "Avrupa Para Birimi", img: "/images/flag-2.png" },
-    { name: "JPY", exp: "Japon Yeni", img: "/images/flag-3.png" },
-    { name: "GBP", exp: "İngiliz Sterlini", img: "/images/flag-4.png" },
-    { name: "DKK", exp: "Danimarka Kronu", img: "/images/flag-5.png" },
-    { name: "NOK", exp: "Norveç Kronu", img: "/images/flag-6.png" },
-  ];
+
 
   useEffect(() => {
     const fetchData = async () => {
+      const explanation = [
+        { name: "USD", exp: "Amerikan Doları", img: "/images/flag-1.png" },
+        { name: "EUR", exp: "Avrupa Para Birimi", img: "/images/flag-2.png" },
+        { name: "JPY", exp: "Japon Yeni", img: "/images/flag-3.png" },
+        { name: "GBP", exp: "İngiliz Sterlini", img: "/images/flag-4.png" },
+        { name: "DKK", exp: "Danimarka Kronu", img: "/images/flag-5.png" },
+        { name: "NOK", exp: "Norveç Kronu", img: "/images/flag-6.png" },
+      ];
       const date = getDate()
       const response = await fetch(
-        `http://api.exchangeratesapi.io/v1/${date}?access_key=19d60e349f6e05160fe1f27cb4842df2&base=EUR&symbols=TRY,USD,GBP,DKK,NOK,JPY,EUR`
+        `http://api.exchangeratesapi.io/v1/${date}?access_key=f5a4259c77929dda9ef0cd5ec0492085&base=EUR&symbols=TRY,USD,GBP,DKK,NOK,JPY,EUR`
       );
       const result = await response.json();
       const ratesArray = Object.entries(result.rates);

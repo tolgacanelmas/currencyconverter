@@ -1,4 +1,3 @@
-@import url(c:\Users\Programci-01\Desktop\currencyconverter\src\styles\bootstrap\bootstrap.min.css);
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
@@ -71,18 +70,19 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
-  margin-right: 0px;
 }
 
 .app .currency-wrapper .currency-container .currency {
   margin-bottom: 25px;
+  margin-right: 0px;
   padding-right: 0px;
   width: 100%;
 }
 
 @media (min-width: 1400px) {
   .app .currency-wrapper .currency-container .currency {
-    width: 50%;
+    width: calc(50% - 75px);
+    margin-right: 75px;
   }
 }
 
@@ -109,12 +109,6 @@
   margin-right: 0px;
   border-bottom: 1px solid #bac9d5;
   padding-bottom: 25px;
-}
-
-@media (min-width: 992px) {
-  .app .currency-wrapper .currency-container .currency-inner {
-    margin-right: 75px;
-  }
 }
 
 .app .currency-wrapper .currency-container .currency-inner > div {
@@ -205,6 +199,19 @@
 .app .currency-wrapper .converter-container {
   background-image: linear-gradient(154deg, #2b3b48 32%, #8093a5 115%);
   padding: 19px 20px 26px 20px;
+  margin-left: 0px;
+}
+
+@media (min-width: 992px) {
+  .app .currency-wrapper .converter-container {
+    margin-left: 75px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .app .currency-wrapper .converter-container {
+    margin-left: 0px;
+  }
 }
 
 .app .currency-wrapper .converter-container > div {

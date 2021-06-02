@@ -1,0 +1,133 @@
+@import "../bootstrap/bootstrap.min.css";
+
+.app {
+    padding: 1.9375rem 1rem 4.25rem 1rem;
+
+    @media (min-width: 768px) {
+        padding: 1.9375rem 5rem 4.25rem 5rem;
+    }
+
+    @media (min-width: 992px) {
+        padding: 1.9375rem 10rem 4.25rem 10rem;
+    }
+
+    & > h1 {
+        font-family: Roboto;
+        font-size: 28px;
+        font-weight: bold;
+        line-height: 1.21;
+        letter-spacing: normal;
+        color: #2b3b48;
+        margin-bottom: 41px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 992px) {
+            flex-direction: row;
+        }
+
+        .currency-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-right: 0px;
+
+            @media (min-width: 992px) {
+                margin-right: 100px;
+            }
+            .currency {
+                padding-bottom: 25px;
+                margin-bottom: 25px;
+                padding-right: 0px;
+
+                @media (min-width: 768px) {
+                    padding-right: 75px;
+                }
+
+                &-inner {
+                    display: flex;
+                    border-bottom: 1px solid #bac9d5;
+
+                    & > div {
+                        display: flex;
+                        flex-direction: column;
+
+                        span {
+                            margin-bottom: 5px;
+                        }
+                    }
+
+                    .currency-img {
+                        margin-right: 20px;
+                        width: auto;
+
+                        img {
+                            max-width: 44px;
+                            height: auto;
+                        }
+                    }
+                    .currency-title {
+                        width: 100%;
+                        margin-right: 20px;
+
+                        @media (min-width: 768px) {
+                        margin-right: 60px;
+                        }
+        
+                        span:first-child {
+                            font-family: Roboto;
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 1.25;
+                            color: #2b3b48;
+                        }
+
+                        span:last-child {
+                            font-family: Roboto;
+                            font-size: 12px;
+                            font-weight: normal;
+                            line-height: 2;
+                            letter-spacing: normal;
+                            color: #2b3b48;
+                            white-space: nowrap;
+                        }
+                    }
+                    .currency-buy,
+                    .currency-sell {
+                        text-align: right;
+                        width: 100%;
+
+                        span:first-child {
+                            font-family: Roboto;
+                            font-size: 12px;
+                            font-weight: 500;
+                            letter-spacing: normal;
+                            text-align: right;
+                            color: #4f6477;
+                        }
+                        span:last-child {
+                            font-family: Roboto;
+                            font-size: 12px;
+                            font-weight: normal;
+                            line-height: 1.5;
+                            letter-spacing: normal;
+                            text-align: right;
+                            color: #2b3b48;
+
+                            @media (min-width:768px){
+                            font-size: 16px;
+
+                            }
+                        }
+                    }
+
+                    .currency-buy {
+                        margin-right: 60px;
+                    }
+                }
+            }
+        }
+    }
+}

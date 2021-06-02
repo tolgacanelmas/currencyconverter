@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="app">
       <h1>Piyasalar</h1>
-      <div className="container">
+      <div className="currency-wrapper">
         <div className="currency-container row">
           {
             objectArray.map(([key, value]) => {

@@ -25,7 +25,7 @@
   margin-bottom: 41px;
 }
 
-.app .container {
+.app .currency-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,7 +36,7 @@
 }
 
 @media (min-width: 992px) {
-  .app .container {
+  .app .currency-wrapper {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -44,7 +44,7 @@
   }
 }
 
-.app .container .currency-container {
+.app .currency-wrapper .currency-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,31 +55,31 @@
 }
 
 @media (min-width: 992px) {
-  .app .container .currency-container {
+  .app .currency-wrapper .currency-container {
     margin-right: 100px;
   }
 }
 
-.app .container .currency-container .currency {
+.app .currency-wrapper .currency-container .currency {
   padding-bottom: 25px;
   margin-bottom: 25px;
   padding-right: 0px;
 }
 
 @media (min-width: 768px) {
-  .app .container .currency-container .currency {
+  .app .currency-wrapper .currency-container .currency {
     padding-right: 75px;
   }
 }
 
-.app .container .currency-container .currency-inner {
+.app .currency-wrapper .currency-container .currency-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid #bac9d5;
 }
 
-.app .container .currency-container .currency-inner > div {
+.app .currency-wrapper .currency-container .currency-inner > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,32 +89,32 @@
           flex-direction: column;
 }
 
-.app .container .currency-container .currency-inner > div span {
+.app .currency-wrapper .currency-container .currency-inner > div span {
   margin-bottom: 5px;
 }
 
-.app .container .currency-container .currency-inner .currency-img {
+.app .currency-wrapper .currency-container .currency-inner .currency-img {
   margin-right: 20px;
   width: auto;
 }
 
-.app .container .currency-container .currency-inner .currency-img img {
+.app .currency-wrapper .currency-container .currency-inner .currency-img img {
   max-width: 44px;
   height: auto;
 }
 
-.app .container .currency-container .currency-inner .currency-title {
+.app .currency-wrapper .currency-container .currency-inner .currency-title {
   width: 100%;
   margin-right: 20px;
 }
 
 @media (min-width: 768px) {
-  .app .container .currency-container .currency-inner .currency-title {
+  .app .currency-wrapper .currency-container .currency-inner .currency-title {
     margin-right: 60px;
   }
 }
 
-.app .container .currency-container .currency-inner .currency-title span:first-child {
+.app .currency-wrapper .currency-container .currency-inner .currency-title span:first-child {
   font-family: Roboto;
   font-size: 16px;
   font-weight: 500;
@@ -122,7 +122,7 @@
   color: #2b3b48;
 }
 
-.app .container .currency-container .currency-inner .currency-title span:last-child {
+.app .currency-wrapper .currency-container .currency-inner .currency-title span:last-child {
   font-family: Roboto;
   font-size: 12px;
   font-weight: normal;
@@ -132,14 +132,14 @@
   white-space: nowrap;
 }
 
-.app .container .currency-container .currency-inner .currency-buy,
-.app .container .currency-container .currency-inner .currency-sell {
+.app .currency-wrapper .currency-container .currency-inner .currency-buy,
+.app .currency-wrapper .currency-container .currency-inner .currency-sell {
   text-align: right;
   width: 100%;
 }
 
-.app .container .currency-container .currency-inner .currency-buy span:first-child,
-.app .container .currency-container .currency-inner .currency-sell span:first-child {
+.app .currency-wrapper .currency-container .currency-inner .currency-buy span:first-child,
+.app .currency-wrapper .currency-container .currency-inner .currency-sell span:first-child {
   font-family: Roboto;
   font-size: 12px;
   font-weight: 500;
@@ -148,8 +148,8 @@
   color: #4f6477;
 }
 
-.app .container .currency-container .currency-inner .currency-buy span:last-child,
-.app .container .currency-container .currency-inner .currency-sell span:last-child {
+.app .currency-wrapper .currency-container .currency-inner .currency-buy span:last-child,
+.app .currency-wrapper .currency-container .currency-inner .currency-sell span:last-child {
   font-family: Roboto;
   font-size: 12px;
   font-weight: normal;
@@ -160,13 +160,13 @@
 }
 
 @media (min-width: 768px) {
-  .app .container .currency-container .currency-inner .currency-buy span:last-child,
-  .app .container .currency-container .currency-inner .currency-sell span:last-child {
+  .app .currency-wrapper .currency-container .currency-inner .currency-buy span:last-child,
+  .app .currency-wrapper .currency-container .currency-inner .currency-sell span:last-child {
     font-size: 16px;
   }
 }
 
-.app .container .currency-container .currency-inner .currency-buy {
+.app .currency-wrapper .currency-container .currency-inner .currency-buy {
   margin-right: 60px;
 }
 /*# sourceMappingURL=converter.css.map */
